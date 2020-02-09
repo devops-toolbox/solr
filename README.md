@@ -8,10 +8,10 @@ solr: Solr
 Ansible galaxy:
 ---------------
 
-[https://galaxy.ansible.com/devops-toolbox.solr](https://galaxy.ansible.com/devops-toolbox.solr)
+[https://galaxy.ansible.com/devopstoolbox.solr](https://galaxy.ansible.com/devopstoolbox.solr)
 
 ```bash
-ansible-galaxy install devops-toolbox.solr
+ansible-galaxy install devopstoolbox.solr
 ```
 
 Requirements
@@ -60,7 +60,7 @@ Example Playbook
   tasks:
     - name: solr is configured
       import_role:
-        name: devops-toolbox.solr
+        name: devopstoolbox.solr
       vars:
         solr_packages_state: present
         solr_remove_packages: true
@@ -89,4 +89,4 @@ MIT
 Author Information
 ------------------
 
-- [Mihai Criveti](https://www.linkedin.com/in/devops-toolbox.)
+- [Mihai Criveti](https://www.linkedin.com/in/devopstoolbox.)
