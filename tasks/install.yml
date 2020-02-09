@@ -1,0 +1,27 @@
+---
+# Install solr packages
+
+- name: unwanted packages are removed
+  package:
+    name: "{{ solr_packages_remove }}"
+    state: absent
+  become: true
+  when: solr_remove_packages
+
+- name: prereq repositories are installed
+  package:
+    name: "{{ solr_packages_repos }}"
+    state: "{{ solr_packages_state }}"
+  become: true
+
+- name: prereq packages are installed
+  package:
+    name: "{{ solr_packages_prereq }}"
+    state: "{{ solr_packages_state }}"
+  become: true
+
+- name: packages are installed
+  package:
+    name: "{{ solr_packages_install }}"
+    state: "{{ solr_packages_state }}"
+  become: true

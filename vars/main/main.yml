@@ -1,0 +1,44 @@
+---
+# vars file for packages
+
+# Detected OS
+my_os: "{{ ansible_distribution }}_{{ ansible_distribution_major_version }}"
+
+# Repos create
+solr_repos_create: "{{ _solr_repos_create['all']
+  | union ( _solr_repos_create[my_os]
+  | default([]) ) }}"
+
+# Repos download
+solr_repos_download: "{{ _solr_repos_download['all']
+  | union ( _solr_repos_download[my_os]
+  | default([]) ) }}"
+
+# Templates Copy
+solr_templates_copy: "{{ _solr_templates_copy['all']
+  | union ( _solr_templates_copy[my_os]
+  | default([]) ) }}"
+
+# Services Enable
+solr_services_enable: "{{ _solr_services_enable['all']
+  | union ( _solr_services_enable[my_os]
+  | default([]) ) }}"
+
+# SELinux Enable
+solr_selinux_enable: "{{ _solr_selinux_enable['all']
+  | union ( _solr_selinux_enable[my_os]
+  | default([]) ) }}"
+
+# Packages lists
+solr_packages_remove: "{{ _solr_packages_remove['all']
+  | union ( _solr_packages_remove[my_os]
+  | default([]) ) }}"
+solr_packages_repos: "{{ _solr_packages_repos['all']
+  | union ( _solr_packages_repos[my_os]
+  | default([]) ) }}"
+solr_packages_prereq: "{{ _solr_packages_prereq['all']
+  | union ( _solr_packages_prereq[my_os]
+  | default([]) ) }}"
+solr_packages_install: "{{ _solr_packages_install['all']
+  | union ( _solr_packages_install[my_os]
+  | default([]) ) }}"

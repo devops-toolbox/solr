@@ -1,0 +1,10 @@
+---
+# Template configuration files for solr
+
+- name: template is copied
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  become: true
+  loop: "{{ solr_templates_copy }}"
+  when: solr_copy_templates
